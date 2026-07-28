@@ -1,0 +1,189 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #0000005f;
+    font-family:'Officina','Comic Sans MS';
+}
+
+
+.logo-container img {
+    width: 170px;
+    height: auto;
+}
+
+.email-bar {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 50px;
+    background-color: #026010;
+    box-shadow: 0px 8px 20px rgba(2, 82, 5, 0.2); 
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.email-bar:hover {
+    transform: translateY(5px);
+    box-shadow: 0px 15px 30px rgba(252, 251, 251, 0.3);
+}
+
+.email-bar input {
+    font-size: 20px;
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: none;
+    flex-grow: 1;
+    background-color: transparent;
+    color: #333;
+    text-align: center;
+    transition: color 0.3s ease; 
+}
+
+.email-bar input:focus {
+    color: #000000;
+    outline: none; 
+}
+
+.email-bar .loading-dots {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+}
+
+.email-bar .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #000000; 
+    border-radius: 50%;
+    margin: 0 2px;
+    animation: blink 1.4s infinite both;
+}
+
+@keyframes blink {
+    0%, 20%, 50%, 80%, 100% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+    }
+}
+
+@keyframes blink {
+    0%, 20%, 50%, 80%, 100% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+    }
+}
+
+.temp-emailbox-text {
+    margin-top: 20px;
+}
+
+.message-section {
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+
+.message-section h3 {
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.message-section #messages {
+    text-align: center;
+    font-size: 18px;
+    color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.message-section #messages:before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-image: url('sobre-de-carta.png'); 
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto 20px auto;
+    animation: pulse 2s infinite; 
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.button-group {
+    margin-top: 20px;
+}
+
+.btn {
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 576px) {
+    .temp-emailbox {
+        margin: 20px 0;
+    }
+
+    .message-section {
+        padding: 10px;
+    }
+}
+
+canvas {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: -1; 
+    width: 100vw;
+    height: 100vh; 
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: transparent; 
+}
+.logo-text {
+    font-size: 22px;
+    color: #f9f9f9;  
+    font-weight: bold;
+    margin-top: 10px; 
+    text-align: center;
+    font-family:'Copperplate Gothic','Comic Sans MS'
+}
+

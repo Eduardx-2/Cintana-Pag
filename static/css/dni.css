@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Copperplate Gothic', 'Comic Sans MS';
+}
+
+.logo-section {
+    text-align: center; 
+    margin-bottom: 5px;
+}
+
+#logo {
+    width: 100px;
+    border: none;
+    display: block;
+    margin: 0 auto; 
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 0; 
+    font-family: 'Copperplate Gothic', 'Comic Sans MS';
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    
+    padding: 5px; 
+    max-width: 2200px;
+    margin: 20px auto; 
+}
+
+.form-container {
+    width: 100%;
+    max-width: px;
+    padding: 25px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 12px; 
+    gap: 100px;
+}
+
+
+.form-section {
+    padding: 10px; 
+    width: 100%;
+}
+
+.form-section.large, .form-section.medium, .form-section.small {
+    flex: 122;
+    min-width: 150px;
+}
+
+.form-section label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.form-section input, .select-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid hsl(118, 100%, 47%);
+    border-radius: 12px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+input:focus {
+    outline: none;
+    border-color: #f8f8f8; 
+}
+
+.photo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%; 
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.photo-upload, .signature-upload, .fingerprint-upload {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    width: 100%; 
+    max-width: 250px; 
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border: 2px solid #000000;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#photo-preview, #signature-preview, #fingerprint-preview {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: cover;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.button-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+button {
+    background-color: #14b105;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #0f5612;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    z-index: -1;
+}
+
+
+@media screen and (max-width: 768px) {
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        justify-content: space-between;
+    }
+
+    .photo-upload, .signature-upload, .fingerprint-upload {
+        max-width: 100%; 
+    }
+
+    .button-section {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 16px;
+    }
+
+    #logo {
+        width: 80px;
+    }
+
+    .form-section input, .select-input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .button-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+.link {
+    background-color: #000000;
+    padding: 5px 20px;
+    color: #efefef;
+    border-radius: 2px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    display: inline-block;
+
+}
+.link {
+width: 100%;
+max-width: 170px;
+height: auto;
+object-fit: cover; 
+border: 2px solid #000000;
+border-radius: 6px;
+margin-top: 40px;
+}
+
+.link label:hover {
+background-color: #6a876b;
+}
+.form-section.large {
+    flex: 2;
+}
+
+.form-section.medium {
+    flex: 2;
+}
+
+.form-section.small {
+    flex: 1.7;
+}
+input[type="file"] {
+    display: none;
+}
+.select-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #37ff00;
+    border-radius: 8px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.select-input:focus {
+    outline: none;
+    border-color: #fbfffb; 
+}
+img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border: 2px solid #000000;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#photo-preview, #signature-preview, #fingerprint-preview {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: cover; 
+    border: 2px solid #000000;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#signature-preview {
+    width: 150px; 
+    height: 100px;
+}
+
+#fingerprint-preview {
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.photo-upload label, .signature-upload label, .fingerprint-upload label {
+    background-color: #000000;
+    padding: 5px 20px;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.photo-upload label:hover, .signature-upload label:hover, .fingerprint-upload label:hover {
+    background-color: #6a876b;
+}
+
+.file-upload-section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; 
+}
+.file-upload-container {
+    max-width: 35%;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.form-row {
+    display: flex;
+    justify-content: flex-start;
+    gap: 100px;
+}

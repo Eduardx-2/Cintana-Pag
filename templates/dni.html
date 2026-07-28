@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificación</title>
+    <link rel="stylesheet" href="/static/css/dni.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <canvas id="canvas"></canvas>
+    <canvas id="canvas2"></canvas>
+</body>
+</head>
+<body>
+    <div class="logo-section">
+        <img src="/static/image/sofd1.png" alt="Logo" id="logo">
+        <h1>S O F T B I R D</h1>
+    </div>
+    <div class="main-container">
+    </div>
+    <div class="main-container">
+        <div class="form-container">
+            <form>
+                <div class="form-row">
+                    <div class="form-section large">
+                        <label for="country"><i class="fas fa-flag"></i> Country</label>
+                        <select id="country" class="select-input">
+                            <option value="Buenos Aires">Argentina</option>
+                    <option value="El Salvador">El Salvador</option>
+                    <option value="Perú">Perú</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Costa Rica">Costa Rica</option>
+                        </select>
+                    </div>
+                    <div class="form-section medium">
+                        <label for="city"><i class="fas fa-city"></i> City</label>
+                        <select id="city" class="select-input">
+                    <option value="Buenos Aires">Buenos Aires</option>
+                    <option value="San Salvador">San Salvador</option>
+                    <option value="Lima">Lima</option>
+                    <option value="Quito">Quito</option>
+                    <option value="Santiago de Chile">Santiago de Chile</option>
+                    <option value="San Jose">San Jose</option>
+                        </select>
+                    </div>
+                    <div class="form-section small">
+                        <label for="docType"><i class="fas fa-id-card"></i> Tipo de Documento</label>
+                        <select id="docType" class="select-input">
+                            <option value="ID Card">DNI</option>
+                        </select>
+                    </div>
+                    <div class="form-section small">
+                        <label for="revision"><i class="fas fa-history"></i>Ubigueo</label>
+                        <input type="text" id="revision">
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-section medium">
+                        <label for="firstName"><i class="fas fa-user"></i> Nombre</label>
+                        <input type="text" id="firstName" >
+                    </div>
+                    <div class="form-section medium">
+                        <label for="middleName"><i class="fas fa-user"></i>Primer Apellido</label>
+                        <input type="text" id="middleName">
+                    </div>
+                    <div class="form-section medium">
+                        <label for="lastName"><i class="fas fa-user"></i>Segundo Apellido</label>
+                        <input type="text" id="lastName">
+                    </div>
+                </div>
+
+            
+                <div class="form-row">
+                    <div class="form-section medium">
+                        <label for="birthday"><i class="fas fa-calendar-alt"></i>  Fecha de Nacimiento</label>
+                        <input type="date" id="birthday">
+                    </div>
+                    <div class="form-section medium">
+                        <label for="issueDate"><i class="fas fa-calendar-check"></i> Fecha de Emisión</label>
+                        <input type="date" id="issueDate">
+                    </div>
+                    <div class="form-section medium">
+                        <label for="expiryDate"><i class="fas fa-calendar-times"></i> Fecha de Vencimiento</label>
+                        <input type="date" id="expiryDate">
+                    </div>
+                </div>
+
+        
+                <div class="form-row">
+                    <div class="form-section small">
+                        <label for="docNumber"><i class="fas fa-id-card"></i> Número de Documento</label>
+                        <input type="text" id="docNumber">
+                    </div>
+                    <div class="form-section small">
+                        <label for="cuit"><i class="fas fa-info-circle"></i> Estado Civil</label>
+                        <input type="text" id="cuit" >
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-section medium">
+                        <label for="optionalData1"><i class="fas fa-info-circle"></i>Sexo</label>
+                        <input type="text" id="optionalData1">
+                    </div>
+
+                    <div class="form-section medium">
+                        <label for="optionalData2"><i class="fas fa-info-circle"></i> Busqueda Aleatoria</label>
+                        <input type="text" id="optionalData2">
+                    </div>
+                    <div class="form-section medium">
+                        <label for="expiryDate"><i class="fas fa-calendar-times"></i>Fecha de Inscripción</label>
+                        <input type="date" id="dataInscrip">
+                    </div>
+                    <div class="link">
+                        <label for="link"><a id="link_install" class="fas fa-download "></a> Link de descarga</label>
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    
+        <div class="photo-section">
+            <div class="photo-upload">
+                <label for="photo"><i class="fas fa-camera"></i> Photo</label>
+                <input type="file" id="photo" accept="image/*">
+                <img id="photo-preview" alt="Preview Photo" style="display:none;">
+            </div>
+        
+            <div class="signature-upload">
+                <label for="signature"><i class="fas fa-signature"></i> Signature</label>
+                <input type="file" id="signature" accept="image/*">
+                <img id="signature-preview" alt="Preview Signature" style="display:none;">
+            </div>
+        
+            <div class="fingerprint-upload">
+                <label for="fingerprint"><i class="fas fa-fingerprint"></i> Huella</label>
+                <input type="file" id="fingerprint" name="fingerprint" accept="image/*">
+                <img id="fingerprint-preview" alt="Fingerprint Preview" style="display:none;">
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="button-section">
+        <button id="save-btn" onclick="btn_information()">Generate Información</button>
+        <button id="cancel-btn" onclick="btn_generate()">Generar Identificación</button>
+    </div>
+    <script src="/static/js/dni_script.js"></script>
+    
+</body>
+</html>

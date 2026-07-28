@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftBird</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/tercera2.css">
+</head>
+<body>
+
+    <div class="logo">
+        <img src="/static/image/sofd2.png" alt="Logo" id="logo" onclick="toggleMenu()">
+    </div>
+    <div class="onSec">
+      <div class="bodtitulo"> <h1 class="title"><span class="fspan-title">HACKED by </span><span class="blink">SOFT0DAY</span></h1></div>
+    </div>
+    <div class="vid">
+      <video class="roboto" src="/static/image/vidmov.mp4" type="video/mp4" loop="true" autoplay controls muted></video>      
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">Nuestros Servicios</a></li>
+            <li><a href="#">Contáctanos</a></li>
+            <li><a href="#">Ayuda</a></li>
+            <li><a href="#">Y mucho más</a></li>
+        </ul>
+    </nav>
+    <div class="data">
+      eliot@server:~# <span style='color:rgb(238, 240, 240)'>su</span>
+      <span style='color:rgb(7, 181, 10)'>[sudo] password for root:<span class="blinki">___</span> </span>
+      <br>
+      root@server:~# <span style='color:rgb(255, 255, 255)'>id</span>
+      <span style='color:rgb(7, 181, 10)'>Power lies with those who dare to fight for it.</span>
+      <br>
+      root@server:~# <span style='color:red'>echo "done!"<span class="blinki">_</span></span>
+      </pre></div>
+    <div id="sidebar" class="sidebar">
+      <div class="logo-menu">
+        <img src="/static/image/sofd2.png" alt="Logo" id="sidebar-logo">
+    </div>
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        <a href="/correo">Correo Temporal</a>
+        <a href="/dni_page">Identidad</a>
+        <a href="/ajustes">Ajustes</a>
+        <div class="sidebar-footer">
+        <p>&copy; SoftBird.</p>
+      </div>
+    </div>
+    <div class="sidebar-footer">
+    <p>&copy; 2024 SoftBird. Todos los derechos reservados.</p>
+  </div>
+<canvas id="canvas"></canvas>
+<script src="{{ url_for('static', filename='js/js.js') }}"></script>
+</html>
