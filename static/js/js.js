@@ -10,7 +10,7 @@ window.addEventListener("resize", function () {
 var matrix = "123456780ABCDEFGHIJKLMNOPQRTabcdefghijklmnopqrstuvwxyz";
 matrix = matrix.split("");
 var font_size = 16;
-var columns = canvas.width / font_size; 
+var columns = canvas.width / font_size;
 var drops = [];
 for (var x = 0; x < columns; x++) drops[x] = 1;
 function draw() {
@@ -34,4 +34,21 @@ function toggleMenu() {
   var logo = document.getElementById("logo");
   sidebar.classList.toggle("active");
   logo.classList.toggle("hidden");
+}
+
+function updateClock() {
+  const clock = document.getElementById("clock");
+  if (!clock) return;
+  const now = new Date();
+  const time = now.toLocaleTimeString("es-SV", { hour12: false });
+  clock.textContent = time;
+}
+updateClock();
+setInterval(updateClock, 1000);
+
+if (typeof toggleMenu !== "function") {
+  window.toggleMenu = function () {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("active");
+  };
 }

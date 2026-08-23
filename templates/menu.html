@@ -1,54 +1,280 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoftBird</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/tercera2.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoftBird | Secure Network</title>
+    <link rel="stylesheet" href="/static/css/tercera2.css" />
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <div class="noise"></div>
+    <div class="scanlines"></div>
+    <div class="grid"></div>
 
-    <div class="logo">
-        <img src="/static/image/sofd2.png" alt="Logo" id="logo" onclick="toggleMenu()">
-    </div>
-    <div class="onSec">
-      <div class="bodtitulo"> <h1 class="title"><span class="fspan-title">HACKED by </span><span class="blink">SOFT0DAY</span></h1></div>
-    </div>
-    <div class="vid">
-      <video class="roboto" src="/static/image/vidmov.mp4" type="video/mp4" loop="true" autoplay controls muted></video>      
-    </div>
-    <nav>
-        <ul>
-            <li><a href="#">Nuestros Servicios</a></li>
-            <li><a href="#">Contáctanos</a></li>
-            <li><a href="#">Ayuda</a></li>
-            <li><a href="#">Y mucho más</a></li>
-        </ul>
-    </nav>
-    <div class="data">
-      eliot@server:~# <span style='color:rgb(238, 240, 240)'>su</span>
-      <span style='color:rgb(7, 181, 10)'>[sudo] password for root:<span class="blinki">___</span> </span>
-      <br>
-      root@server:~# <span style='color:rgb(255, 255, 255)'>id</span>
-      <span style='color:rgb(7, 181, 10)'>Power lies with those who dare to fight for it.</span>
-      <br>
-      root@server:~# <span style='color:red'>echo "done!"<span class="blinki">_</span></span>
-      </pre></div>
-    <div id="sidebar" class="sidebar">
-      <div class="logo-menu">
-        <img src="/static/image/sofd2.png" alt="Logo" id="sidebar-logo">
-    </div>
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
-        <a href="/correo">Correo Temporal</a>
-        <a href="/dni_page">Identidad</a>
-        <a href="/ajustes">Ajustes</a>
-        <div class="sidebar-footer">
-        <p>&copy; SoftBird.</p>
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">
+          <img
+            src="/static/image/sofd2.png"
+            alt="SoftBird"
+            onclick="toggleMenu()"
+          />
+        </div>
+        <div class="brand-text">
+          <span>SOFT</span>
+          <strong>BIRD</strong>
+        </div>
       </div>
-    </div>
-    <div class="sidebar-footer">
-    <p>&copy; 2024 SoftBird. Todos los derechos reservados.</p>
-  </div>
-<canvas id="canvas"></canvas>
-<script src="{{ url_for('static', filename='js/js.js') }}"></script>
+
+      <div class="system-status">
+        <span class="status-dot"></span>
+        <div>
+          <small>SYSTEM STATUS</small>
+          <strong>ONLINE</strong>
+        </div>
+      </div>
+
+      <div class="top-time">
+        <span id="clock">00:00:00</span>
+        <small>NODE</small>
+      </div>
+    </header>
+
+    <nav class="main-nav">
+      <a href="#"><span class="nav-number">01</span>NUESTROS SERVICIOS</a>
+      <a href="#"><span class="nav-number">02</span>CONTÁCTANOS</a>
+      <a href="#"><span class="nav-number">03</span>AYUDA</a>
+      <a href="#"><span class="nav-number">04</span>Y MUCHO MÁS</a>
+    </nav>
+
+    <main class="main-container">
+      <section class="hero">
+        <div class="hero-line left"></div>
+        <div class="hero-content">
+          <h1>HACKED <span>by</span> <strong>SOFT0DAY</strong></h1>
+        </div>
+        <div class="hero-line right"></div>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel video-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-id">SYS.01</span>
+              <h2>VISUAL FEED</h2>
+            </div>
+            <span class="panel-status">LIVE</span>
+          </div>
+
+          <div class="video-container">
+            <div class="video-corner tl"></div>
+            <div class="video-corner tr"></div>
+            <div class="video-corner bl"></div>
+            <div class="video-corner br"></div>
+            <video
+              src="/static/image/vidmov.mp4"
+              type="video/mp4"
+              autoplay
+              loop
+              muted
+            ></video>
+            <div class="video-overlay">
+              <span>CAM_01</span>
+              <span>● RECORDING</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel info-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-id">SYS.02</span>
+              <h2>ABOUT US</h2>
+            </div>
+            <span class="hex">◆</span>
+          </div>
+
+          <div class="info-icon">
+            <img src="/static/image/sofd2.png" alt="SoftBird" />
+          </div>
+
+          <p class="info-title">DIGITAL FREEDOM</p>
+
+          <p class="info-text">
+            Exploramos los límites de la tecnología para desarrollar
+            herramientas digitales enfocadas en privacidad, seguridad y
+            libertad.
+          </p>
+
+          <div class="info-tags">
+            <span>PRIVACY</span>
+            <span>SECURITY</span>
+            <span>FREEDOM</span>
+          </div>
+
+          <button class="access-button">
+            ACCEDER AL SISTEMA
+            <span>→</span>
+          </button>
+        </div>
+
+        <div class="panel terminal-panel">
+          <div class="panel-header terminal-header">
+            <div>
+              <span class="panel-id">SYS.03</span>
+              <h2>ROOT TERMINAL</h2>
+            </div>
+
+            <div class="terminal-lights">
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+          </div>
+
+          <div class="terminal">
+            <div>
+              <span class="terminal-user">eliot@server</span>:~#
+              <span class="command">su</span>
+            </div>
+
+            <div class="terminal-success">
+              [sudo] password for root:
+              <span class="cursor">|</span>
+            </div>
+
+            <br />
+
+            <div>
+              <span class="terminal-user">root@server</span>:~#
+              <span class="command">id</span>
+            </div>
+
+            <div class="terminal-output">
+              Power lies with those who dare to fight for it.
+            </div>
+
+            <br />
+
+            <div>
+              <span class="terminal-user">root@server</span>:~#
+              <span class="command">echo "done!"</span>
+            </div>
+
+            <div class="terminal-danger">
+              done!
+            </div>
+          </div>
+
+          <div class="terminal-footer">
+            <span>USER: ROOT</span>
+            <span>ACCESS: GRANTED</span>
+            <span>ENCRYPTION: AES-256</span>
+          </div>
+        </div>
+
+        <div class="panel monitor-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-id">SYS.04</span>
+              <h2>NETWORK MONITOR</h2>
+            </div>
+            <span class="monitor-live">LIVE</span>
+          </div>
+
+          <div class="monitor-content">
+            <div class="radar">
+              <div class="radar-ring ring-1"></div>
+              <div class="radar-ring ring-2"></div>
+              <div class="radar-ring ring-3"></div>
+              <div class="radar-cross horizontal"></div>
+              <div class="radar-cross vertical"></div>
+              <div class="radar-sweep"></div>
+              <div class="radar-point point-1"></div>
+              <div class="radar-point point-2"></div>
+              <div class="radar-point point-3"></div>
+            </div>
+
+            <div class="network-data">
+              <div>
+                <span>NODE</span>
+                <strong>SB-01</strong>
+              </div>
+
+              <div>
+                <span>STATUS</span>
+                <strong class="green">SECURE</strong>
+              </div>
+
+              <div>
+                <span>TRAFFIC</span>
+                <strong>1.42 TB/s</strong>
+              </div>
+
+              <div>
+                <span>THREATS</span>
+                <strong class="red">03</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside id="sidebar" class="sidebar">
+      <button class="closebtn" onclick="toggleMenu()">x</button>
+
+      <div class="sidebar-logo">
+        <img src="/static/image/sofd2.png" alt="SoftBird" />
+        <div>
+          <strong>SOFTBIRD</strong>
+          <span>SECURITY NETWORK</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <span class="sidebar-title">MAIN MODULES</span>
+
+        <a href="/correo">
+          <span class="menu-index">01</span>
+          <span>CORREO TEMPORAL</span>
+          <b>→</b>
+        </a>
+
+        <a href="/dni_page">
+          <span class="menu-index">02</span>
+          <span>IDENTIDAD</span>
+          <b>→</b>
+        </a>
+
+        <a href="/ajustes">
+          <span class="menu-index">03</span>
+          <span>AJUSTES</span>
+          <b>→</b>
+        </a>
+      </div>
+
+      <div class="sidebar-terminal">
+        <span>CONNECTION</span>
+        <p>127.0.0.1</p>
+        <p>PORT 8080</p>
+        <p class="green">ENCRYPTED</p>
+      </div>
+
+      <footer>
+        © 2024 SoftBird
+        <br />
+        ALL RIGHTS RESERVED
+      </footer>
+    </aside>
+
+    <footer class="main-footer">
+      <span>SOFTBIRD // SECURE DIGITAL NETWORK</span>
+      <span>© 2024 SoftBird. Todos los derechos reservados.</span>
+      <span>NODE: SB-01</span>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/js.js') }}"></script>
+  </body>
 </html>
