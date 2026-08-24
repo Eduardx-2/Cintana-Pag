@@ -35,20 +35,3 @@ function toggleMenu() {
   sidebar.classList.toggle("active");
   logo.classList.toggle("hidden");
 }
-
-function updateClock() {
-  const clock = document.getElementById("clock");
-  if (!clock) return;
-  const now = new Date();
-  const time = now.toLocaleTimeString("es-SV", { hour12: false });
-  clock.textContent = time;
-}
-updateClock();
-setInterval(updateClock, 1000);
-
-if (typeof toggleMenu !== "function") {
-  window.toggleMenu = function () {
-    const sidebar = document.getElementById("sidebar");
-    sidebar.classList.toggle("active");
-  };
-}
