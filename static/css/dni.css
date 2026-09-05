@@ -1,0 +1,754 @@
+:root {
+    --bg: #0f1310;
+    --card: rgba(22, 28, 24, 0.86);
+    --green: #7fd858;
+    --green-soft: rgba(127, 216, 88, 0.10);
+    --green-border: rgba(79, 125, 60, 0.65);
+    --white: #eef1ec;
+    --gray: #9aa79e;
+    --gray-dark: #6f7c74;
+    --border: #26302a;
+    --radius: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: var(--bg);
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(127, 216, 88, 0.12), transparent 36%),
+        radial-gradient(circle at 85% 0%, rgba(134, 168, 255, 0.09), transparent 34%),
+        radial-gradient(circle at 50% 105%, rgba(255, 255, 255, 0.03), transparent 45%),
+        var(--bg);
+    color: var(--white);
+    font-family: "Inter", -apple-system, "Segoe UI", sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.02), transparent 40%),
+        linear-gradient(300deg, rgba(127, 216, 88, 0.03), transparent 35%);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(circle at 50% -15%, rgba(255, 255, 255, 0.05), transparent 42%);
+}
+
+.logo-section {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 30px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#logo {
+    width: 88px;
+    height: 88px;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    border: none;
+    filter:
+        drop-shadow(0 0 6px rgba(127, 216, 88, 0.26)) drop-shadow(0 0 18px rgba(127, 216, 88, 0.08));
+}
+
+h1 {
+    width: 100%;
+    margin-top: 12px;
+    text-align: center;
+    color: var(--white);
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    line-height: 1;
+    text-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+h1::first-letter {
+    color: var(--green);
+}
+
+.main-container {
+    position: relative;
+    z-index: 2;
+    width: min(1350px, calc(100% - 40px));
+    margin: 0 auto 20px;
+}
+
+.main-container:has(.form-container) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.form-container {
+    position: relative;
+    width: 100%;
+    padding: 28px;
+    background:
+        linear-gradient(180deg, rgba(22, 28, 24, 0.88), rgba(22, 28, 24, 0.74));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 18px 42px -24px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+}
+
+.form-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--green), transparent);
+    opacity: 0.5;
+}
+
+.form-container::before {
+    content: "IDENTIFICATION DATA";
+    display: block;
+    width: 100%;
+    margin-bottom: 22px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(79, 125, 60, 0.35);
+    color: var(--green);
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.form-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row:first-of-type {
+    grid-template-columns: 1.4fr 1.4fr 1fr 1fr;
+}
+
+.form-row:nth-of-type(2),
+.form-row:nth-of-type(3) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.form-row:nth-of-type(4) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.form-row:nth-of-type(5) {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.form-section {
+    width: 100%;
+    min-width: 0;
+}
+
+.form-section.large,
+.form-section.medium,
+.form-section.small {
+    width: 100%;
+    min-width: 0;
+    flex: none;
+}
+
+.form-section label {
+    width: 100%;
+    min-height: 19px;
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 7px;
+    color: var(--gray);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.form-section label i {
+    width: 16px;
+    flex-shrink: 0;
+    color: var(--green);
+    font-size: 12px;
+    text-align: center;
+}
+
+.form-section input,
+.select-input {
+    width: 100%;
+    height: 44px;
+    padding: 0 13px;
+    background: rgba(15, 19, 16, 0.72);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    color: var(--white);
+    font-family: "Inter", -apple-system, "Segoe UI", sans-serif;
+    font-size: 14px;
+    text-align: left;
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-section input:hover,
+.select-input:hover {
+    border-color: var(--green-border);
+}
+
+.form-section input:focus,
+.select-input:focus {
+    border-color: var(--green);
+    background: rgba(127, 216, 88, 0.03);
+    box-shadow: 0 0 0 2px rgba(127, 216, 88, 0.08);
+}
+
+.form-section input::placeholder {
+    color: var(--gray-dark);
+}
+
+.select-input {
+    cursor: pointer;
+}
+
+.select-input option {
+    background: #050805;
+    color: #ffffff;
+}
+
+input[type="date"] {
+    color-scheme: dark;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter:
+        invert(70%) sepia(90%) saturate(900%) hue-rotate(60deg);
+    cursor: pointer;
+}
+
+.link {
+    width: 100%;
+    height: 44px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(127, 216, 88, 0.04);
+    border: 1px solid var(--green-border);
+    border-radius: 8px;
+}
+
+.link:hover {
+    background: rgba(127, 216, 88, 0.08);
+    border-color: var(--green);
+}
+
+.link label {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: var(--gray);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.link label:hover {
+    background: transparent;
+}
+
+#link_install {
+    color: var(--green);
+    text-decoration: none;
+}
+
+.photo-section {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    background:
+        linear-gradient(180deg, rgba(22, 28, 24, 0.88), rgba(22, 28, 24, 0.74));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 18px 42px -24px rgba(0, 0, 0, 0.8);
+}
+
+.photo-section::before {
+    content: "IDENTITY INFORMATION";
+    display: block;
+    width: 100%;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(79, 125, 60, 0.35);
+    color: var(--green);
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.photo-upload,
+.signature-upload,
+.fingerprint-upload {
+    width: 100%;
+    min-height: 135px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(15, 19, 16, 0.65);
+    border: 1px dashed rgba(79, 125, 60, 0.58);
+    border-radius: 10px;
+    text-align: center;
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.photo-upload:hover,
+.signature-upload:hover,
+.fingerprint-upload:hover {
+    background: rgba(127, 216, 88, 0.04);
+    border-color: var(--green);
+}
+
+.photo-upload label,
+.signature-upload label,
+.fingerprint-upload label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 6px 9px;
+    color: var(--gray);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.photo-upload label i,
+.signature-upload label i,
+.fingerprint-upload label i {
+    color: var(--green);
+    font-size: 13px;
+}
+
+.photo-upload label:hover,
+.signature-upload label:hover,
+.fingerprint-upload label:hover {
+    color: #ffffff;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#photo-preview,
+#signature-preview,
+#fingerprint-preview {
+    display: block;
+    margin-top: 3px;
+    background: #010201;
+    border: 1px solid rgba(79, 125, 60, 0.5);
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+#photo-preview {
+    width: 115px;
+    height: 125px;
+}
+
+#signature-preview {
+    width: 165px;
+    height: 75px;
+}
+
+#fingerprint-preview {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+.button-section {
+    position: relative;
+    z-index: 2;
+    width: min(1350px, calc(100% - 40px));
+    margin: 18px auto 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+button {
+    height: 44px;
+    min-width: 200px;
+    padding: 0 22px;
+    background: rgba(15, 19, 16, 0.96);
+    border: 1px solid var(--green-border);
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: "Inter", -apple-system, "Segoe UI", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: rgba(127, 216, 88, 0.10);
+    border-color: var(--green);
+    box-shadow: 0 0 15px rgba(127, 216, 88, 0.15);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#save-btn {
+    background: rgba(15, 19, 16, 0.75);
+    border-color: var(--border);
+    color: var(--gray);
+}
+
+#save-btn:hover {
+    border-color: var(--green-border);
+    color: #ffffff;
+}
+
+#cancel-btn {
+    background: rgba(127, 216, 88, 0.14);
+    border-color: var(--green);
+}
+
+@media screen and (min-width: 1600px) {
+
+    .main-container,
+    .button-section {
+        width: 1400px;
+    }
+
+    .main-container:has(.form-container) {
+        grid-template-columns: minmax(0, 1fr) 310px;
+    }
+
+    .form-container {
+        padding: 28px;
+    }
+
+    .form-section label {
+        font-size: 14px;
+    }
+
+    .form-section input,
+    .select-input {
+        height: 46px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .main-container:has(.form-container) {
+        grid-template-columns: minmax(0, 1fr) 270px;
+    }
+
+    .form-container {
+        padding: 22px;
+    }
+
+    .photo-section {
+        padding: 17px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .main-container:has(.form-container) {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-section {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 13px;
+    }
+
+    .photo-section::before {
+        grid-column: 1 / -1;
+    }
+
+    .photo-upload,
+    .signature-upload,
+    .fingerprint-upload {
+        min-height: 150px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .form-row:first-of-type {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .form-row:nth-of-type(2),
+    .form-row:nth-of-type(3),
+    .form-row:nth-of-type(5) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .form-section label {
+        font-size: 13px;
+    }
+
+    .form-section input,
+    .select-input {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .logo-section {
+        padding: 20px 12px 16px;
+    }
+
+    #logo {
+        width: 65px;
+        height: 65px;
+    }
+
+    h1 {
+        font-size: 21px;
+        letter-spacing: 0.14em;
+    }
+
+    .main-container {
+        width: calc(100% - 20px);
+    }
+
+    .main-container:has(.form-container) {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .form-container {
+        padding: 17px;
+        border-radius: 13px;
+    }
+
+    .form-row,
+    .form-row:first-of-type,
+    .form-row:nth-of-type(2),
+    .form-row:nth-of-type(3),
+    .form-row:nth-of-type(4),
+    .form-row:nth-of-type(5) {
+        grid-template-columns: 1fr;
+        gap: 11px;
+        margin-bottom: 12px;
+    }
+
+    .form-section label {
+        font-size: 13px;
+    }
+
+    .form-section input,
+    .select-input {
+        height: 43px;
+        font-size: 14px;
+    }
+
+    .photo-section {
+        display: flex;
+        padding: 15px;
+    }
+
+    .photo-upload,
+    .signature-upload,
+    .fingerprint-upload {
+        min-height: 145px;
+    }
+
+    .photo-upload label,
+    .signature-upload label,
+    .fingerprint-upload label {
+        font-size: 13px;
+    }
+
+    .button-section {
+        width: calc(100% - 20px);
+        flex-direction: column;
+        gap: 9px;
+    }
+
+    button {
+        width: 100%;
+        min-width: 0;
+        height: 45px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main-container {
+        width: calc(100% - 14px);
+    }
+
+    .form-container {
+        padding: 14px;
+    }
+
+    .photo-section {
+        padding: 13px;
+    }
+
+    h1 {
+        font-size: 19px;
+        letter-spacing: 0.1em;
+    }
+
+    .form-container::before,
+    .photo-section::before {
+        font-size: 11px;
+        letter-spacing: 2.5px;
+    }
+
+    .form-section label {
+        font-size: 12px;
+    }
+
+    .form-section input,
+    .select-input {
+        height: 41px;
+        font-size: 13px;
+    }
+
+    .photo-upload label,
+    .signature-upload label,
+    .fingerprint-upload label {
+        font-size: 12px;
+    }
+
+    #photo-preview {
+        width: 105px;
+        height: 115px;
+    }
+
+    #signature-preview {
+        width: 150px;
+        height: 70px;
+    }
+
+    #fingerprint-preview {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .main-container {
+        width: calc(100% - 10px);
+    }
+
+    .form-container {
+        padding: 11px;
+    }
+
+    h1 {
+        font-size: 17px;
+        letter-spacing: 0.08em;
+    }
+
+    .form-section label {
+        font-size: 11px;
+    }
+
+    .form-section input,
+    .select-input {
+        height: 39px;
+        font-size: 12px;
+    }
+
+    button {
+        height: 42px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .logo-section {
+        padding: 10px;
+    }
+
+    #logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    h1 {
+        margin-top: 6px;
+        font-size: 13px;
+    }
+
+    .main-container:has(.form-container) {
+        grid-template-columns: minmax(0, 1fr) 230px;
+    }
+
+    .form-container {
+        padding: 13px;
+    }
+
+    .photo-section {
+        padding: 11px;
+    }
+
+    .photo-upload,
+    .signature-upload,
+    .fingerprint-upload {
+        min-height: 105px;
+    }
+}
